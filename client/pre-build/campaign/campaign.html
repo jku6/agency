@@ -1,0 +1,50 @@
+<table class="table table-bordered table-striped">
+  <thead>
+  	<tr>
+		  <th></th>
+		  <th class="name_column">Campaign Name</th>
+		  <th>Status</th>
+		  <th>Budget</th>
+		  <th>Start Date</th>
+		  <th>End Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="campaign in campaigns">
+			<td>
+				<input type="checkbox" ng-model="campaign.value">
+			</td>
+			<td class="name_column">
+				<input class="form-control" ng-model="campaign.name" placeholder="campaign.name">
+			</td>
+			<td>
+				<select ng-model="campaign.status" ng-options="boolToStr(item) for item in [true, false]">
+				</select>
+			</td>
+			<td>
+				<input class="form-control" ng-model="campaign.budget" placeholder="campaign.budget" currency>
+			</td>
+			<td>
+      	<div class="input-group">
+          <input datepicker-localdate ng-model="campaign.start_date" type="text"
+      		class="form-control" uib-datepicker-popup="MM-dd-yy" datepicker-append-to-body="true"
+      		is-open="data.isOpen">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-calendar" ng-click="data.isOpen = true"></i></span>
+        </div>  
+			</td>
+			<td>
+				<div class="input-group">
+          <input datepicker-localdate ng-model="campaign.end_date" type="text"
+      		class="form-control" uib-datepicker-popup="MM-dd-yy" datepicker-append-to-body="true"
+      		is-open="data.isOpen">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-calendar" ng-click="data.isOpen = true"></i></span>
+        </div>  
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="row">
+	<div class="col-md-1 col-md-offset-11">
+		<button class="btn btn-primary" ng-click="postCampaigns(campaigns)">Save</button>
+	</div>
+</div>
