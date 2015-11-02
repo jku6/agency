@@ -33,7 +33,6 @@ angular.module('Mediamath')
   			campaign_post_data.push(campaigns[i]);
   		}
   	}
-
   	if (!campaign_post_data || !campaign_post_data.length) {
 	  	$scope.showModalError = !$scope.showModalError;
   	} else {
@@ -45,10 +44,8 @@ angular.module('Mediamath')
 	  		}
 	  	});
   	}
-
   };
 
   $scope.boolToStr = function(arg) {return JSON.parse(arg) ? 'true' : 'false'};
-
 
 });
