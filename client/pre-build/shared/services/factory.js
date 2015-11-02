@@ -7,8 +7,8 @@ angular.module('Mediamath')
 		return $http.get("http://challenge.mediamath.com/api/agencies?api_token="+api_token)
 		.then(function(response){
 			return response;
-		}, function(response) {
-			console.log(response);
+		}, function(error) {
+			console.log(error);
 		});
 		
 	}
@@ -17,8 +17,8 @@ angular.module('Mediamath')
 		return $http.get("http://challenge.mediamath.com/api/advertisers?api_token="+api_token+"&agency_id="+agencyId)
 		.then(function(response){
 			return response;
-		}, function(response) {
-			console.log(response);
+		}, function(error) {
+			console.log(error);
 		});
 		
 	}
@@ -27,8 +27,8 @@ angular.module('Mediamath')
 		return $http.get("http://challenge.mediamath.com/api/campaigns?api_token="+api_token+"&advertiser_id="+advertiserId)
 		.then(function(response){
 			return response;
-		}, function(response) {
-			console.log(response);
+		}, function(error) {
+			console.log(error);
 		});
 	}
 
@@ -44,26 +44,14 @@ angular.module('Mediamath')
   		};
   		console.log(data);
   		var promise = $http.post("http://challenge.mediamath.com/api/campaigns/"+campaignData[i]["_id"]+"?api_token="+api_token, data)
-
   		values.push(promise);
   	}
-  	// console.log(campaignData);
-
   	return $q.all(values).then(function(response) {
   		return response;
-  	}, function(response) {
-  		console.log(response);
+  	}, function(error) {
+  		console.log(error);
   	});
-
-		// return $http.post("http://challenge.mediamath.com/api/campaigns/"+campaignParams["_id"]+"?api_token="+api_token, campaignData)
-		// .then(function(response) {
-		// 	return response;
-		// }, function(response) {
-		// 	console.log(response);
-		// });
 	}
-
-
 
 	return resource;
 });

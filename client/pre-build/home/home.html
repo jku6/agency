@@ -2,20 +2,18 @@
 <div class="row">
 	<div class="col-md-2">
 		<section id="home">
-			
-
 		  <p>Agencies:</p>
 		  <select ng-model="agency" ng-change="getAdvertisers(agency._id)" ng-options="agency as agency.name for agency in agencies">
 			</select>
-
+			<br>
+			<br>
 			<p>Advertisers:</p>
 		  <select ng-model="advertiser" ng-options="advertiser as advertiser.name for advertiser in advertisers">
 			</select>
-
+			<br>
 			<br>
 			<br>
 			<button class="btn btn-primary" ng-click="getCampaigns(advertiser._id); showme=true">Get Campaigns</button>
-
 		</section>
 	</div>
 	<div class="col-md-10">
