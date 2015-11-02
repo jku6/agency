@@ -3,6 +3,7 @@ angular.module('Mediamath')
 
 	$scope.showModal = false;
 	$scope.showModalError = false;
+  $scope.showBool = false;
   
 
   mmFactory.getAgencies().then(function(agencies) {
@@ -20,6 +21,7 @@ angular.module('Mediamath')
   		for (var i=0; i < campaigns.data.campaigns.length; i++) {
   			campaigns.data.campaigns[i]["value"] = false;
   		}
+      $scope.showBool = !campaigns.data.campaigns.length ? false : true;
   		$scope.campaigns = campaigns.data.campaigns;
   	});
   };
