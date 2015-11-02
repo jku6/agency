@@ -32,7 +32,7 @@ angular.module('Mediamath')
   		}
   	}
 
-  	if (campaign_post_data === undefined || campaign_post_data.length == 0) {
+  	if (!campaign_post_data || !campaign_post_data.length) {
 	  	$scope.showModalError = !$scope.showModalError;
   	} else {
   		mmFactory.postCampaigns(campaign_post_data).then(function(resp) {
