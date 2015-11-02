@@ -3,12 +3,12 @@
 	<div class="col-md-2">
 		<section id="home">
 		  <p>Agencies:</p>
-		  <select ng-model="agency" ng-change="getAdvertisers(agency._id)" ng-options="agency as agency.name for agency in agencies">
+		  <select ng-model="agency" ng-change="getAdvertisers(agency._id)" ng-options="agency as agency.name for agency in agencies" class="form-control">
 			</select>
 			<br>
 			<br>
 			<p>Advertisers:</p>
-		  <select ng-model="advertiser" ng-options="advertiser as advertiser.name for advertiser in advertisers">
+		  <select ng-model="advertiser" ng-options="advertiser as advertiser.name for advertiser in advertisers" class="form-control">
 			</select>
 			<br>
 			<br>

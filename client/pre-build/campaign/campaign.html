@@ -3,8 +3,8 @@
   	<tr>
 		  <th></th>
 		  <th class="name_column">Campaign Name</th>
-		  <th>Status</th>
-		  <th>Budget</th>
+		  <th class="status_column">Status</th>
+		  <th class="budget_column">Budget</th>
 		  <th>Start Date</th>
 		  <th>End Date</th>
 		</tr>
@@ -17,11 +17,11 @@
 			<td class="name_column">
 				<input class="form-control" ng-model="campaign.name" placeholder="campaign.name">
 			</td>
-			<td>
-				<select ng-model="campaign.status" ng-options="boolToStr(item) for item in [true, false]">
+			<td class="status_column">
+				<select ng-model="campaign.status" ng-options="boolToStr(item) for item in [true, false]" class="form-control">
 				</select>
 			</td>
-			<td>
+			<td class="budget_column">
 				<input class="form-control" ng-model="campaign.budget" placeholder="campaign.budget" currency>
 			</td>
 			<td>
